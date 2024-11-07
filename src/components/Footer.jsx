@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../Context/AppProvider";
 
 export default function Footer() {
   return (
-    <div>
-      <footer className="footer bg-base-200 text-base-content p-10">
-        <nav>
+    <div className="bg-[#1A1919] text-white mt-12">
+      <footer className="footer p-10 w-4/5 mx-auto">
+        <div className="lg:w-1/2">
+          <h2 className="font-bold text-3xl">CareerHub</h2>
+          <p className="text-gray-400">
+            There are many variations of passages of Lorem Ipsum , but the
+            majority have suffered alteration in some form.
+          </p>
+          <div>
+            <img src={"../src/assets/icons/social.png"} alt="" />
+          </div>
+        </div>
+        <nav className="flex-grow">
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>
@@ -24,8 +35,15 @@ export default function Footer() {
           <a className="link link-hover">Privacy policy</a>
           <a className="link link-hover">Cookie policy</a>
         </nav>
+        <nav>
+          <h6 className="footer-title">Legal</h6>
+          <a className="link link-hover">Terms of use</a>
+          <a className="link link-hover">Privacy policy</a>
+          <a className="link link-hover">Cookie policy</a>
+        </nav>
       </footer>
-      <footer className="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">
+      <hr />
+      <footer className="footer w-4/5 mx-auto px-10 py-4">
         <aside className="grid-flow-col items-center">
           <svg
             width="24"

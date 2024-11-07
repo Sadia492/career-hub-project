@@ -3,6 +3,8 @@ import MainLayout from "../layout/MainLayout";
 import Statistics from "../pages/Statistics";
 import JobsCard from "../components/JobsCard";
 import JobDetails from "../pages/JobDetails";
+import AppliedJobs from "../pages/AppliedJobs";
+import Blog from "../pages/Blog";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +31,17 @@ const router = createBrowserRouter([
       {
         path: "/job/:id",
         element: <JobDetails></JobDetails>,
-        loader: () => fetch("./jobs.json"),
+        loader: () => fetch("../jobs.json"),
+      },
+      {
+        path: "/applied",
+        element: <AppliedJobs></AppliedJobs>,
+        loader: () => fetch("../jobs.json"),
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+        loader: () => fetch("../jobs.json"),
       },
     ],
   },

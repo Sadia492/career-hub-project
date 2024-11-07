@@ -30,7 +30,7 @@ export default function Navbar() {
     <div
       className={`bg-[#f9f9ff] flex ${
         pathname !== "/"
-          ? "bg-[url(../src/assets/images/bg2.png)] bg-no-repeat bg-right py-12"
+          ? "bg-[url(/assets/images/bg2.png)] bg-no-repeat bg-right py-12"
           : ""
       } `}
     >

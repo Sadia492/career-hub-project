@@ -12,7 +12,7 @@ export default function Footer() {
             majority have suffered alteration in some form.
           </p>
           <div>
-            <img src={"../src/assets/icons/social.png"} alt="" />
+            <img src={"/assets/icons/social.png"} alt="" />
           </div>
         </div>
         <nav className="flex-grow">

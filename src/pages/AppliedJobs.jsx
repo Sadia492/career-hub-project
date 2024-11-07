@@ -71,11 +71,11 @@ export default function AppliedJobs() {
                   </button>
                   <div className="flex gap-2 my-2">
                     <p className="flex gap-1 text-lg text-gray-400 font-semibold">
-                      <img src={"../src/assets/icons/location2.png"} alt="" />
+                      <img src={"/assets/icons/location2.png"} alt="" />
                       {job.location}
                     </p>
                     <p className="flex gap-1 text-lg text-gray-400 font-semibold">
-                      <img src={"../src/assets/icons/money.png"} alt="" />
+                      <img src={"/assets/icons/money.png"} alt="" />
                       {job.salary}
                     </p>
                   </div>

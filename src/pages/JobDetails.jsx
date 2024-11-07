@@ -55,31 +55,31 @@ export default function JobDetails() {
             <p className="font-bold text-black">Job Details</p>
             <hr />
             <p className="flex gap-2 text-gray-500">
-              <img src={"../src/assets/icons/money.png"} alt="" />
+              <img src={"/assets/icons/money.png"} alt="" />
               <span className="font-bold text-black">Salary: </span>
               {salary} (Per Month)
             </p>
             <p className="flex gap-2 text-gray-500">
-              <img src={"../src/assets/icons/calendar.png"} alt="" />
+              <img src={"/assets/icons/calendar.png"} alt="" />
               <span className="font-bold text-black">Job title: </span>
               {job_title}
             </p>
             <p className="font-bold text-black">Contact Information</p>
             <hr />
             <p className="flex gap-2 text-gray-500">
-              <img src={"../src/assets/icons/phone.png"} alt="" />
+              <img src={"/assets/icons/phone.png"} alt="" />
               <span className="font-bold text-black">Phone: </span>
               {phone}
             </p>
             <p className="flex gap-2 text-gray-500">
-              <img src={"../src/assets/icons/email.png"} alt="" />
+              <img src={"/assets/icons/email.png"} alt="" />
               <span className="font-bold text-black">Email: </span>
               {email}
             </p>
             <p className="flex gap-2 text-gray-500">
               <img
                 className="w-7 h-8"
-                src={"../src/assets/icons/location2.png"}
+                src={"/assets/icons/location2.png"}
                 alt=""
               />
               <span className="font-bold text-black">Address: </span>

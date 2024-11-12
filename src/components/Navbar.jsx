@@ -1,9 +1,11 @@
-import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { authContext } from "../Context/AuthProvider";
 
 export default function Navbar() {
   const { pathname } = useLocation();
-  console.log(pathname);
+  const { user, signOutUser } = useContext(authContext);
+
   const links = (
     <>
       <NavLink
@@ -24,6 +26,28 @@ export default function Navbar() {
       >
         <li>Blog</li>
       </NavLink>
+      <NavLink
+        className={({ isActive }) => `${isActive ? "text-[#7E90FE]" : ""}`}
+        to="/map"
+      >
+        <li>Map</li>
+      </NavLink>
+      {!user && (
+        <>
+          <NavLink
+            className={({ isActive }) => `${isActive ? "text-[#7E90FE]" : ""}`}
+            to="/login"
+          >
+            <li>Login</li>
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => `${isActive ? "text-[#7E90FE]" : ""}`}
+            to="/register"
+          >
+            <li>Register</li>
+          </NavLink>
+        </>
+      )}
     </>
   );
   return (
@@ -72,8 +96,31 @@ export default function Navbar() {
             href="#featured"
             className="btn bg-gradient-to-b from-[#7E90FE] to-[#9873FF]"
           >
+            {user?.displayName
+              ? user?.displayName
+              : user?.providerData[0].displayName}{" "}
             Start Applying
           </a>
+          {user ? (
+            <>
+              <Link
+                to="/login"
+                onClick={signOutUser}
+                className="btn bg-gradient-to-b from-[#7E90FE] to-[#9873FF]"
+              >
+                Log Out
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/login"
+                className="btn bg-gradient-to-b from-[#7E90FE] to-[#9873FF]"
+              >
+                Log In
+              </Link>
+            </>
+          )}
         </div>
       </div>
       {/* <img className="w-52" src={"../src/assets/images/bg2.png"} alt="" /> */}

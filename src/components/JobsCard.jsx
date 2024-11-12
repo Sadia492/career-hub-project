@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Card from "./Card";
+import { Helmet } from "react-helmet";
 
 export default function JobsCard() {
   const jobs = useLoaderData();
@@ -25,6 +26,9 @@ export default function JobsCard() {
 
   return (
     <div id="featured" className="w-4/5 mx-auto my-12">
+      <Helmet>
+        <title>{category ? `${category} | CareerHub` : "CareerHub"}</title>
+      </Helmet>
       <h2 className="font-bold text-center text-3xl">Featured Jobs</h2>
       <p className="text-center mt-4 mb-8">
         Explore thousands of job opportunities with all the information you

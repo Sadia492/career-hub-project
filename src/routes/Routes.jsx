@@ -5,6 +5,11 @@ import JobsCard from "../components/JobsCard";
 import JobDetails from "../pages/JobDetails";
 import AppliedJobs from "../pages/AppliedJobs";
 import Blog from "../pages/Blog";
+import Map from "../components/Map";
+import Login from "../components/Login";
+import Register from "../components/Register";
+import RegisterPage from "../pages/RegisterPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -30,18 +35,45 @@ const router = createBrowserRouter([
       },
       {
         path: "/job/:id",
-        element: <JobDetails></JobDetails>,
+        element: (
+          <PrivateRoute>
+            <JobDetails></JobDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("../jobs.json"),
       },
       {
         path: "/applied",
-        element: <AppliedJobs></AppliedJobs>,
+        element: (
+          <PrivateRoute>
+            <AppliedJobs></AppliedJobs>
+          </PrivateRoute>
+        ),
         loader: () => fetch("../jobs.json"),
       },
       {
         path: "/blog",
-        element: <Blog></Blog>,
-        loader: () => fetch("../jobs.json"),
+        element: (
+          <PrivateRoute>
+            <Blog></Blog>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/map",
+        element: (
+          <PrivateRoute>
+            <Map></Map>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <RegisterPage></RegisterPage>,
       },
     ],
   },

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Heading from "../components/Heading";
 import { addToLs } from "../Utilities/LocalStorage";
+import { Helmet } from "react-helmet";
 
 export default function JobDetails() {
   const [selectedJob, setSelectedJob] = useState([]);
@@ -29,6 +30,10 @@ export default function JobDetails() {
 
   return (
     <div>
+      <Helmet>
+        <title>Details | CareerHub</title>
+      </Helmet>
+
       <Heading title="Job Details"></Heading>
 
       <div className="grid grid-cols-3 gap-6 w-4/5 mx-auto mt-6">

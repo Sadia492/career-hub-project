@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { getJobsFromLs } from "../Utilities/LocalStorage";
 import Heading from "../components/Heading";
 import { IoIosArrowDown } from "react-icons/io";
+import { Helmet } from "react-helmet";
 export default function AppliedJobs() {
   const [appliedJobs, setAppliedJobs] = useState([]);
   const [displayedJobs, setDisplayedJobs] = useState([]);
@@ -33,6 +34,9 @@ export default function AppliedJobs() {
 
   return (
     <div>
+      <Helmet>
+        <title>Applied Jobs | CareerHub</title>
+      </Helmet>
       <Heading title="Applied Jobs"></Heading>
       <div className="w-4/5 mx-auto space-y-6 mt-6">
         <div className="text-right">
